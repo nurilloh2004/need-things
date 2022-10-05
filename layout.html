@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'font-awesome/css/font-awesome.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'myprint/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesomePremium/css/all.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'myprint/css/animate.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'myprint/css/style.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'myprint/css/index_css.css' %}"/>
+
+    <style>
+        /* Dropdown Button */
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            border: none;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            z-index: 1;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+    </style>
+</head>
+<body class="container-fluid pl-0 pr-0">
+<header class="container-fluid pl-0 pr-0 text-center header border-bottom border-dark bg-white">
+    <nav class="navbar navbar-expand-lg bg-transparent">
+        <div class="container pb-1 pr-0 border-bottom">
+            <a class="navbar-brand" href="{% url 'myprint:home' %}"><img src="{% static 'img/logo.svg' %}" width="200" alt=""></a>
+            <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto text-center text-sm-center text-md-center ">
+                    <li class="nav-item pl-3 pr-3 active">
+                        <div class="media pt-2">
+                            <span class="pt21"><i class="fa text-secondary fa-phone fa-2x"
+                                                  style="transform: rotate(90deg);"></i></span>
+                            <div class="media-body text-left pl-3">
+                                <h6>ТЕЛЕФОН</h6>
+                                <h6>+998 88 600 88 11</h6>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item  pl-3 pr-3 ">
+                        <div class="media pt-2">
+                            <span class="pt-2"><i class="fa text-secondary fa-map-marker-alt fa-2x"></i></span>
+                            <div class="media-body text-left pl-3">
+                                <h6>E-MAIL</h6>
+                                <h6>info@myprint.uz</h6>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item  pl-3">
+                        <div class="media pt-2">
+                            <span class="pt-2"><i class="fa text-secondary fa-clock fa-2x"></i></span>
+                            <div class="media-body text-left pl-3">
+                                <h6>ВРЕМЯ РАБОТЫ</h6>
+                                <h6>Пн-Вс (с 9:00-18:00)</h6>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <div class="container pl-0 pr-0">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link small active text-uppercase" style="color: #000000;" aria-current="page"
+                           href="{% url 'myprint:home' %}">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link small" style="color: #000000;" href="about.html">О КОМПАНИИ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link small text-uppercases" style="color: #000000;" href="dizayn.html">ДИЗАЙН</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link small" style="color: #000000;" href="{% url 'myprint:top_product' %}">TOP PRODUCT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link small" style="color: #000000;" href="{% url 'myprint:product' %}">PRODUCT</a>
+                    </li>
+
+                </ul>
+
+                <form class="d-flex">
+                    <div class="input-group">
+                        <input type="text" class="form-control w-75" style="border-radius: 20px 0px 0px 20px;"
+                               placeholder="Поиск..." aria-label="Поиск" aria-describedby="basic-addon2">
+                        <span class="input-group-text form-control w-25" id="basic-addon2">Поиск</span>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="btn dropbtn font-weight-bold"><i class="fa text-secondary fa-user"
+                                                                        style="font-size: 25px;"></i></button>
+                        <div class="dropdown-content border" style="z-index: 9999;">
+                            <div class="pl-3 pr-5 pt-2 border-bottom pb-2 text-left"><a href="{% url 'accounts:registerpage' %}"
+                                                                                        class="text-decoration-none bg-transparent text-dark">Kirish</a>
+                            </div>
+                            <div class="pl-3 pr-5 pt-2 border-bottom pb-2 text-left"><a href="{% url 'accounts:user_product' %}"
+                                                                                        class="text-decoration-none bg-transparent text-dark">Maxsulotlarim</a>
+                            </div>
+                            <div class="pl-3 pr-5 pt-2 border-bottom pb-2 text-left"><a href="{% url 'accounts:user_order' %}"
+                                                                                        class="text-decoration-none bg-transparent text-dark">Buyurtmalarim</a>
+                            </div>
+                            <div class="pl-3 pr-5 pt-2 border-bottom pb-2 text-left"><a href="{% url 'accounts:login' %}"
+                                                                                        class="text-decoration-none bg-transparent text-dark">Chiqish</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pr-0 pt-2"><a href="basket.html" class="text-secondary text-decoration-none"><i
+                            class="fa text-secondary fa-shopping-cart" style="font-size: 25px;"></i></a></div>
+
+                    <div class="dropdown">
+                        <button class="btn dropbtn font-weight-bold"><h4 class="font-weight-bold text-secondary">UZ</h4>
+                        </button>
+                        <div class="dropdown-content border" style="z-index: 9999;">
+                            <div class="pl-3 pr-3 pt-1 pb-1 border"><a href="#!"
+                                                                       class="text-decoration-none bg-transparent text-dark">RU</a>
+                            </div>
+                            <div class="pl-3 pr-3 pt-1 pb-1 border"><a href="#!"
+                                                                       class="text-decoration-none bg-transparent text-dark">EN</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>
+
+{% block content %}{% endblock %}
+<footer class="container-fluid pl-0 pr-0 border-top">
+    <div class="container">
+        <div class="row m-0 pb-3">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2 pt-3 pb-3 pl-0 text-left">
+                <img src="{% static 'img/logo.svg' %}" width="250" class="ml-auto" alt="">
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-7 form-inline justify-content-end pt-4">
+                <h6 class="mr-3">Полиграфия</h6>
+                <h6 class="ml-3 mr-3">Сувениры</h6>
+                <h6 class="ml-3 mr-3">Реклама</h6>
+                <h6 class="ml-3">Дизайн</h6>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 text-center text-sm-center text-md-left text-lg-right text-xl-right pt-5">
+                <span class="ml-2"><i class="fab fa-2x fa-telegram"></i></span>
+                <span class="ml-2"><i class="fab fa-2x fa-instagram"></i></span>
+                <span class="ml-2"><i class="fab fa-2x fa-facebook"></i></span>
+                <span class="ml-2"><i class="fab fa-2x fa-youtube"></i></span>
+            </div>
+        </div>
+    </div>
+</footer>
+<footer class="container-fluid" style="background-color: #ff0000;">
+    <div class="container">
+        <div class="row pb-1 pt-1">
+            <div class="col-12 col-sm-12 col-md-5 col-lg-6 col-xl-6 pl-0 text-white text-center text-sm-center text-md-left text-lg-left text-xl-left">
+                <small>&copy; 2020 Все права защищены.</small></div>
+            <div class="col-12 col-sm-12 col-md-7 col-lg-6 col-xl-6 pr-0 text-white text-center text-sm-center text-md-right text-lg-right text-xl-right">
+                <small>Сайт разработан в студио инновационныx разработок <a href="#!" class="text-white"> MYWEB.UZ.</a></small>
+            </div>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript" src="{% static 'myprint/js/jquery-3.2.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'vendor/bootstrap/js/bootstrap.js' %}"></script>
+<script type="text/javascript" src="{% static 'vendor/bootstrap/js/bootstrap.bundle.js' %}"></script>
+<script type="text/javascript" src="{% static 'myprint/js/fontaweasome.js' %}"></script>
+<script type="text/javascript" src="{% static 'myprint/js/script.js' %}"></script>
+<script type="text/javascript"></script>
+
+
+</body>
+</html>
